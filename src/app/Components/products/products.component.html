@@ -1,0 +1,46 @@
+
+<div class="mb-3">
+  <h2>Our Products</h2>
+  <label for="" class="form-label">Select Category</label>
+  <select class="form-control" name="cat" id="CatSel" title="catgory"
+      #show (change)="showproduct(+show.value)"
+      >
+    <option value="0">All Categories</option>
+    <option *ngFor="let cat of CatList" [value]="cat.id">{{cat.name}}</option>
+  </select>
+</div>
+
+<table class="table table-striped" *ngIf="IsShow" id="datatablesSimple">
+    <thead>
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Detailes</th>
+        <th scope="col">Update</th>
+        <th scope="col"> Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of  Products"  >
+      <ng-container *ngIf="pro.quantity!=0">
+        <td>{{pro.id}}</td>
+        <td> {{pro.name}}</td>
+        <td><img [src]="pro.image" alt="ImgPro" width="100px" height="100"> </td>
+        <td> {{pro.quantity}}</td>
+        <td> {{pro.price}}</td>
+        <td><button type="button" class="btn btn-primary" > Detailes</button></td> 
+        <!-- <td><button type="button" class="btn btn-primary"  (click)="OpeenProductUpdate(pro.id)" > Update</button></td>  -->
+        <td><a type="button" class="btn btn-primary"  routerLink="/UpdateProduct/{{pro.id}}" > Update</a></td> 
+
+        <td><button type="button" class="btn btn-primary" (click)="DeleteProduct(+pro.id)"> Delete</button></td> 
+      </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <td><button type="button" class="btn btn-primary" > AddNewProduct</button></td> 
+
+ 

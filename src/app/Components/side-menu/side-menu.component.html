@@ -1,0 +1,82 @@
+<!-- <div class="container">
+<div class="row">
+  <div class="col-4 header" role="banner">
+    <h1 class="logo">
+      <a href="#">Dashboard <span>Devine</span></a>
+    </h1>
+    <div class="nav-wrap">
+      <nav class="main-nav" role="navigation">
+        <ul class="unstyled list-hover-slide">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Tables</a></li>
+          <li><a href="#">Charts</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+      <ul class="social-links list-inline unstyled list-hover-slide">
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google+</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">CodePen</a></li>
+      </ul>
+    </div>
+    </div>
+    <div  style="color:red ;">fdgdfgf</div>
+  </div>
+-->
+
+<!-- This is a reverse engineering of the "Hyperspace"
+     design from HTML5 Up! https://html5up.net/hyperspace -->
+
+     <main class="main">
+
+        <header class="col-4 header" role="banner">
+          <h1 class="logo">
+            <a href="#">Dashboard <span>Devine</span></a>
+          </h1>
+          <div class="nav-wrap">
+            <nav class="main-nav" role="navigation">
+              <ul class="unstyled list-hover-slide">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tables</a></li>
+                <li><a href="#">Charts</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </nav>
+            <ul class="social-links list-inline unstyled list-hover-slide">
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Google+</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">CodePen</a></li>
+            </ul>
+          </div>
+        </header>
+      
+    
+      <section class="twitter">
+        <div class="container">
+          <div class="row">
+          <table class="table table-striped dark">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pro of Products; let i=index"   [ngStyle]="{'background-color':pro.quantity==1? 'lightyellow':'lightgray', 'color':pro.quantity==1? 'red':'darkblue'}">  
+                <td> {{i+1}}</td>
+                <td> {{pro.name}}</td>
+                <td> {{pro.price}}</td>
+                <td > {{pro.quantity}}</td>
+
+              </tr> 
+            </tbody>
+        
+          </table>
+        </div>
+        </div>
+      </section>
+    </main>

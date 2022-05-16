@@ -1,0 +1,29 @@
+
+<table class="table table-striped"  id="datatablesSimple">
+    <thead>
+      <tr>
+        
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+       
+      
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of  Products"  >
+      <ng-container *ngIf="pro.quantity!=0">
+        <td>{{pro.id}}</td>
+        <td> {{pro.name}}</td>
+        <td><img [src]="pro.image" alt="ImgPro" width="100px" height="100"> </td>
+        <td> {{pro.quantity}}</td>
+        <td> {{pro.price }}</td>
+  
+
+      </ng-container>
+      </tr>
+    </tbody>
+  </table>
